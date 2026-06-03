@@ -39,7 +39,7 @@
     header p {
       font-size: 15px;
       color: #6b7280;
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
     }
@@ -47,12 +47,13 @@
     .nav {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 60px;
     }
 
     .nav a {
-      padding: 10px 22px;
+      padding: 10px 20px;
       border-radius: 8px;
       font-size: 13px;
       font-weight: 600;
@@ -66,6 +67,17 @@
       background: #1e1e35;
       color: #fff;
       border-color: #4040a0;
+    }
+
+    .nav a.highlight {
+      border-color: #7c3aed;
+      color: #c4b5fd;
+    }
+
+    .nav a.highlight:hover {
+      background: #2d1f54;
+      border-color: #7c3aed;
+      color: #fff;
     }
 
     .section {
@@ -95,6 +107,11 @@
       margin-top: 4px;
     }
 
+    .section-num.purple {
+      color: #a855f7;
+      background: #1e1030;
+    }
+
     .section-header div h2 {
       font-size: 22px;
       font-weight: 700;
@@ -108,7 +125,6 @@
       line-height: 1.6;
     }
 
-    /* Problem/solution cards */
     .problem-banner {
       background: #1a0f0f;
       border: 1px solid #3d1515;
@@ -131,11 +147,31 @@
       margin-top: 2px;
     }
 
-    .problem-banner p {
-      font-size: 14px;
-      color: #e8cece;
-      line-height: 1.6;
+    .problem-banner p { font-size: 14px; color: #e8cece; line-height: 1.6; }
+
+    .upgrade-banner {
+      background: #0f0a1f;
+      border: 1px solid #4c1d95;
+      border-left: 3px solid #7c3aed;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
+
+    .upgrade-banner .label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a855f7;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .upgrade-banner p { font-size: 14px; color: #ddd6fe; line-height: 1.6; }
 
     .diagram-card {
       background: #0f0f1a;
@@ -146,6 +182,8 @@
       overflow-x: auto;
     }
 
+    .diagram-card.purple-border { border-color: #2d1f54; }
+
     .diagram-card .diagram-label {
       font-size: 11px;
       font-weight: 600;
@@ -155,15 +193,13 @@
       margin-bottom: 24px;
     }
 
-    .mermaid {
-      display: flex;
-      justify-content: center;
-    }
+    .diagram-card.purple-border .diagram-label { color: #a855f7; }
 
-    /* Stats row */
+    .mermaid { display: flex; justify-content: center; }
+
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
       margin-bottom: 16px;
     }
@@ -176,48 +212,33 @@
       text-align: center;
     }
 
+    .stat-card.purple { border-color: #2d1f54; }
+
     .stat-card .num {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 800;
       color: #7c7cf8;
       line-height: 1;
       margin-bottom: 6px;
     }
 
-    .stat-card .label {
-      font-size: 12px;
-      color: #6b7280;
-      line-height: 1.4;
-    }
+    .stat-card.purple .num { color: #a855f7; }
 
-    /* Table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
+    .stat-card .label { font-size: 12px; color: #6b7280; line-height: 1.4; }
 
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
     table th {
-      text-align: left;
-      padding: 10px 14px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #6b7280;
-      border-bottom: 1px solid #1e1e35;
+      text-align: left; padding: 10px 14px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #6b7280; border-bottom: 1px solid #1e1e35;
     }
-
     table td {
-      padding: 11px 14px;
-      color: #c8c8e0;
+      padding: 11px 14px; color: #c8c8e0;
       border-bottom: 1px solid #14141f;
-      vertical-align: top;
-      line-height: 1.5;
+      vertical-align: top; line-height: 1.5;
     }
-
     table tr:last-child td { border-bottom: none; }
-
     table td:first-child { color: #f0f0f8; font-weight: 500; }
 
     .table-card {
@@ -229,27 +250,55 @@
       overflow-x: auto;
     }
 
+    .table-card.purple-border { border-color: #2d1f54; }
+
     .table-card h3 {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #6b7280;
-      margin-bottom: 18px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #6b7280; margin-bottom: 18px;
     }
 
     .pill {
       display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600;
     }
-
     .pill-green { background: #0d2b1a; color: #22c55e; border: 1px solid #166534; }
     .pill-red { background: #1a0d0d; color: #ef4444; border: 1px solid #7f1d1d; }
     .pill-yellow { background: #1a1500; color: #eab308; border: 1px solid #713f12; }
     .pill-blue { background: #0d1220; color: #60a5fa; border: 1px solid #1e3a5f; }
+    .pill-purple { background: #1a0f30; color: #a855f7; border: 1px solid #4c1d95; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: #0f0f1a;
+      border: 1px solid #1e1e35;
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+
+    .info-card h4 {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #6b7280; margin-bottom: 12px;
+    }
+
+    .info-card ul { list-style: none; }
+    .info-card ul li {
+      font-size: 13px; color: #c8c8e0;
+      padding: 5px 0; border-bottom: 1px solid #14141f;
+      display: flex; gap: 10px; align-items: baseline;
+    }
+    .info-card ul li:last-child { border-bottom: none; }
+    .info-card ul li::before { content: "—"; color: #3a3a5a; flex-shrink: 0; }
 
     .tech-row {
       display: grid;
@@ -259,38 +308,166 @@
     }
 
     .tech-card {
-      background: #0f0f1a;
-      border: 1px solid #1e1e35;
-      border-radius: 10px;
-      padding: 16px 20px;
+      background: #0f0f1a; border: 1px solid #1e1e35;
+      border-radius: 10px; padding: 16px 20px;
     }
-
     .tech-card .fn { font-size: 11px; color: #6b7280; margin-bottom: 4px; }
     .tech-card .tool { font-size: 15px; font-weight: 700; color: #7c7cf8; }
 
     footer {
-      text-align: center;
-      margin-top: 80px;
-      padding-top: 32px;
-      border-top: 1px solid #1e1e35;
-      color: #3a3a5a;
-      font-size: 12px;
+      text-align: center; margin-top: 80px;
+      padding-top: 32px; border-top: 1px solid #1e1e35;
+      color: #3a3a5a; font-size: 12px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Ivy Brothers — Internal Strategy</div>
-  <h1>Sales Ops + Webinar Flowcharts</h1>
-  <p>Current state: no CRM, no tracking, manual outreach. This is the proposed system and the webinar funnel built to feed it.</p>
+  <div class="logo">Ivy Brothers — Internal Strategy · Confidential</div>
+  <h1>Sales Ops + Private Briefing Flowcharts</h1>
+  <p>No CRM. No tracking. Manual outreach. This is the proposed system — plus the invite-only Private Briefing that feeds it.</p>
 </header>
 
 <nav class="nav">
-  <a href="#sales-ops" class="active">01 — Sales Ops & CRM</a>
-  <a href="#webinar">02 — Webinar Funnel</a>
+  <a href="#application" class="highlight">00 — Application Gate (NEW)</a>
+  <a href="#sales-ops">01 — Sales Ops & CRM</a>
+  <a href="#webinar">02 — Private Briefing Flow</a>
   <a href="#kpis">03 — KPIs & Tech Stack</a>
 </nav>
+
+<!-- ── SECTION 0: APPLICATION GATE ── -->
+<section class="section" id="application">
+  <div class="section-header">
+    <span class="section-num purple">00</span>
+    <div>
+      <h2>Application Gate — The Private Briefing Model</h2>
+      <p>Not a webinar. Not open registration. Families apply, IB reviews, 20 qualified seats are filled, then — and only then — the AO is contracted and paid. The room is full-pay qualified leads before a dollar goes to the AO.</p>
+    </div>
+  </div>
+
+  <div class="upgrade-banner">
+    <span class="label">Model Change</span>
+    <p><strong>Old:</strong> Open registration webinar — anyone signs up, most are browsers. &nbsp;<strong>New:</strong> Application-gated private briefing — 20 invited families, all qualified, all full-pay intent. AO cost is de-risked: only paid after seat 20 is confirmed. At 30% close on 20 families × $20K avg = $120K minimum per event.</p>
+  </div>
+
+  <div class="diagram-card purple-border">
+    <div class="diagram-label">Application Funnel — Top to Bottom</div>
+    <div class="mermaid">
+flowchart TD
+    A(["Ad / Organic Content\nTikTok · Meta · Instagram"]) --> B["Application Page\n'Apply to Attend — The Ivy Brothers Private Briefing'\nInvite-only · 20 seats · Stanford AO"]
+
+    B --> C["Application Form\nParent name · Email · Phone\nStudent grade · Country · Target schools\nStrongest activity/project · Biggest concern\nWorked with consultant before?"]
+
+    C --> D["Auto-confirm:\n'We received your application.\nYou will hear from us within 48 hours.'"]
+
+    D --> E["IB Team Reviews\nScore: grade year · school targets\nanswer quality · country · intent signals\nWithin 24hrs"]
+
+    E --> F{"Decision"}
+
+    F -- Accepted --> G["Personal Invitation Email — from Jake\n'You have been selected...'\n+ Seat confirmation link\nHeld for 48hrs"]
+
+    F -- Waitlisted --> H["Priority Waitlist Email\nWarm hold — next session\n+ Nurture sequence begins"]
+
+    F -- "Disqualified\n(8th grade or younger,\nno Top-20 targets,\nminimal effort answers)" --> I["Lower-Ticket Path\nHook Program $497–997\nLong-term nurture"]
+
+    G --> J{"Confirms seat?"}
+    J -- No --> H
+    J -- Yes --> K["Seat Locked\nCalendar invite sent\nPre-briefing sequence fires"]
+
+    K --> L["Count: Confirmed seats"]
+    L --> M{"20 seats filled?"}
+    M -- Not yet --> N["Continue accepting applications\nWaitlist for overflow"]
+    N --> L
+
+    M -- Yes --> O["Contract + Pay the AO\nDate locked\nEvent is a go"]
+
+    O --> P["Pre-Briefing Email 1\nConfirmation + what to expect\n'This is a working session — come ready'"]
+    P --> Q["Pre-Briefing Email 2 — 24hrs before\nThe 3 Questions homework\n'Try this for your student right now'"]
+    Q --> R["Pre-Briefing Email 3 — 1hr before\nLink + logistics\n'We start on time. AO is on the full 90 min.'"]
+    R --> S[["Private Briefing — 90 Minutes\n20 Families · Invite-Only"]]
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card purple">
+      <div class="num">20</div>
+      <div class="label">Max seats per session</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="num">48hr</div>
+      <div class="label">Application review window</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="num">$0</div>
+      <div class="label">AO cost until seat 20 confirmed</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="num">$120K+</div>
+      <div class="label">Revenue at 30% close × $20K avg</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="num">$200K+</div>
+      <div class="label">Revenue at 50% close × $20K avg</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="info-card">
+      <h4>Application Fields</h4>
+      <ul>
+        <li>Parent full name + email + phone</li>
+        <li>Student's current grade (9th–12th)</li>
+        <li>Country of residence</li>
+        <li>Target schools (up to 3)</li>
+        <li>Strongest current activity or project</li>
+        <li>Biggest concern about admissions right now</li>
+        <li>Worked with a consultant before? (Y/N)</li>
+        <li>How did you hear about Ivy Brothers?</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Disqualifying Signals — Screen Out</h4>
+      <ul>
+        <li>Grade 8 or younger → Hook Program path</li>
+        <li>No Ivy / Top-20 targets listed → lower intent</li>
+        <li>One-word answers → minimal commitment signal</li>
+        <li>International families → accepted, flagged for AO premium angle</li>
+        <li>Already worked with Crimson / Solomon → position IB as the correction</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="table-card purple-border">
+    <h3>Review + Invitation Timeline</h3>
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Action</th><th>Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Application submitted</td><td>Auto-confirm: "We received your application. You will hear from us within 48 hours."</td><td>Immediate</td></tr>
+        <tr><td>IB team reviews</td><td>Score by grade, targets, answer quality, country</td><td>Within 24hrs</td></tr>
+        <tr><td>Accepted</td><td>Personal invitation from Jake — seat held 48hrs</td><td>Within 48hrs</td></tr>
+        <tr><td>Confirmed</td><td>Seat locked — calendar invite + pre-briefing sequence fires</td><td>Immediately on confirm</td></tr>
+        <tr><td>Waitlisted</td><td>Warm hold email + priority nurture sequence</td><td>Within 48hrs</td></tr>
+        <tr><td>20 seats filled</td><td>AO is contracted and paid — date is locked</td><td>After seat 20</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card purple-border">
+    <h3>AO Cost Logic</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Closes</th><th>Avg Deal</th><th>Revenue</th><th>AO Cost Recovered</th></tr></thead>
+      <tbody>
+        <tr><td>30% close rate</td><td>6 families</td><td>$20,000</td><td>$120,000</td><td><span class="pill pill-green">On close #1</span></td></tr>
+        <tr><td>40% close rate</td><td>8 families</td><td>$20,000</td><td>$160,000</td><td><span class="pill pill-green">On close #1</span></td></tr>
+        <tr><td>50% close rate</td><td>10 families</td><td>$20,000</td><td>$200,000</td><td><span class="pill pill-green">On close #1</span></td></tr>
+        <tr><td>AO fee (est.)</td><td>—</td><td>—</td><td>—$2,000–$5,000</td><td><span class="pill pill-purple">De-risked — paid after seat 20</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 <!-- ── SECTION 1: SALES OPS ── -->
 <section class="section" id="sales-ops">
@@ -298,64 +475,64 @@
     <span class="section-num">01</span>
     <div>
       <h2>Sales Ops & CRM — Proposed System</h2>
-      <p>Right now, the center is handpicking who to reach out to. There is no CRM. No way to know who confirmed a call, who booked, who showed. This replaces that with a system where the setter reaches out to every qualified lead and every touchpoint is tracked.</p>
+      <p>Right now the center is handpicking who to reach out to. No CRM, no tracking, no setter workflow. This replaces that — every lead touched, every touchpoint logged.</p>
     </div>
   </div>
 
   <div class="problem-banner">
     <span class="label">Current State</span>
-    <p>Lead submits form → goes into a void → someone manually decides who to call → no record of what happened → revenue is invisible. Leads are dying in the inbox right now.</p>
+    <p>Lead submits form → goes into a void → someone manually decides who to call → no record of what happened → revenue is invisible. Leads are dying right now.</p>
   </div>
 
   <div class="diagram-card">
     <div class="diagram-label">Full Lead-to-Close Flow</div>
     <div class="mermaid">
 flowchart TD
-    A(["🔵 Lead Source"]) --> B{"Lead Type"}
+    A(["Lead Source"]) --> B{"Lead Type"}
 
-    B --> B1["Webinar Registrant"]
+    B --> B1["Briefing Applicant\nAccepted + confirmed"]
     B --> B2["Form Submit — Site"]
     B --> B3["Organic DM / Referral"]
     B --> B4["Paid Ad Click-Through"]
 
-    B1 --> C["✅ Auto-captured in GoHighLevel CRM\nSource tagged · Timestamp logged"]
+    B1 --> C["Auto-captured in GoHighLevel CRM\nSource tagged · Timestamp logged"]
     B2 --> C
     B3 --> C
     B4 --> C
 
-    C --> D["⚡ Instant Automation — under 5 min\nSMS + Email sent\nCalendar booking link delivered"]
+    C --> D["Instant Automation — under 5 min\nSMS + Email sent\nCalendar booking link delivered"]
 
     D --> E{"Did they book?"}
 
-    E -- Yes --> F["📅 Call Booked\nStatus: BOOKED in CRM\nSetter assigned"]
-    E -- No --> G["📋 Setter Queue\nAll unbooked leads\nNo cherry-picking — everyone gets outreach"]
+    E -- Yes --> F["Call Booked\nStatus: BOOKED in CRM\nSetter assigned"]
+    E -- No --> G["Setter Queue\nAll unbooked leads\nNo cherry-picking — everyone gets outreach"]
 
     G --> H["Setter reaches out\nDM · Text · Email\nGoal: qualify + book"]
     H --> I{"Qualified?"}
-    I -- "Not right fit" --> J["🟣 Lower-Ticket Path\nHook Program $497–997"]
+    I -- "Not right fit" --> J["Lower-Ticket Path\nHook Program $497–997"]
     I -- Yes --> F
 
-    F --> K["📧 Pre-Call Sequence Auto-fires\nEmail 1: Confirmation + credibility\nEmail 2: 24hr — student story\nEmail 3: 1hr — logistics + stat"]
+    F --> K["Pre-Call Sequence Auto-fires\nEmail 1: Confirmation + credibility\nEmail 2: 24hr — student story\nEmail 3: 1hr — logistics + stat"]
 
     K --> L{"Did they show?"}
     L -- "No Show" --> M["Setter re-engages within 1hr\nOffer reschedule — 2 attempts"]
     M --> N{"Rebooked?"}
     N -- Yes --> L
-    N -- No --> O["🔴 Tag: Cold / DNR\nLong-term email nurture"]
+    N -- No --> O["Tag: Cold / DNR\nLong-term email nurture"]
 
-    L -- Showed --> P["📞 Closer Takes Call\nSales script + objection handling"]
+    L -- Showed --> P["Closer Takes Call\nSales script + objection handling"]
 
     P --> Q{"Closed?"}
-    Q -- Yes --> R["🟢 Deal Won\nProgram tagged · Revenue logged · Source attributed"]
+    Q -- Yes --> R["Deal Won\nProgram tagged · Revenue logged · Source attributed"]
     Q -- No --> S{"Objection type?"}
 
-    S --> S1["Price → Downsell\nHook Program standalone"]
-    S --> S2["Not ready → 60-day nurture\nCase studies + broadcast emails"]
-    S --> S3["Needs partner → Book 2nd call\nBoth decision-makers present"]
+    S --> S1["Price — Downsell\nHook Program standalone"]
+    S --> S2["Not ready — 60-day nurture\nCase studies + broadcast emails"]
+    S --> S3["Needs partner — Book 2nd call\nBoth decision-makers present"]
     S3 --> P
 
-    R --> W["🎓 Onboarding Triggered\nWelcome email · Team intro · Program kickoff"]
-    S1 --> W2["Hook Program access granted\nPost-purchase upsell → consultation"]
+    R --> W["Onboarding Triggered\nWelcome email · Team intro · Program kickoff"]
+    S1 --> W2["Hook Program access granted\nPost-purchase upsell path"]
     </div>
   </div>
 
@@ -363,11 +540,11 @@ flowchart TD
     <div class="diagram-label">Setter Daily Workflow</div>
     <div class="mermaid">
 flowchart LR
-    A["☀️ Morning:\nOpen CRM Dashboard"] --> B["View today's\nlead queue"]
+    A["Morning:\nOpen CRM Dashboard"] --> B["View today's\nlead queue"]
     B --> C["Priority 1:\nHot leads — booking\nintent last 24hrs"]
-    C --> D["Priority 2:\nFollow-ups due\n2–3 days ago, no booking"]
+    C --> D["Priority 2:\nFollow-ups due\n2–3 days ago, no response"]
     D --> E["Priority 3:\nNew unworked leads\nNo first contact yet"]
-    E --> F["Setter works\nthrough full queue\n⚠️ No skipping, no handpicking"]
+    E --> F["Works through full queue\nNo skipping, no handpicking"]
     F --> G["Logs every touchpoint\nDate · Channel · Response · Next step"]
     G --> H["EOD report auto-pulls\nDials · Booked · No-shows · Revenue"]
     </div>
@@ -376,127 +553,104 @@ flowchart LR
   <div class="table-card">
     <h3>What Gets Tracked Per Lead</h3>
     <table>
-      <thead>
-        <tr>
-          <th>CRM Field</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
+      <thead><tr><th>CRM Field</th><th>Purpose</th></tr></thead>
       <tbody>
-        <tr><td>Lead source</td><td>Which channel brought them (organic, paid, webinar, referral)</td></tr>
-        <tr><td>Date of first contact</td><td>Speed-to-lead measurement — target under 5 minutes</td></tr>
+        <tr><td>Lead source</td><td>Which channel: organic, paid, briefing application, referral</td></tr>
+        <tr><td>Date of first contact</td><td>Speed-to-lead — target under 5 minutes</td></tr>
         <tr><td>Setter assigned</td><td>Accountability — no lead is ownerless</td></tr>
-        <tr><td>Call booked?</td><td>Y/N + date. Tracks lead-to-book conversion rate</td></tr>
-        <tr><td>Pre-call sequence sent?</td><td>Automation confirmation — shows up on close</td></tr>
-        <tr><td>Showed?</td><td>Y/N. Show rate per setter per source</td></tr>
+        <tr><td>Call booked?</td><td>Y/N + date — tracks lead-to-book conversion</td></tr>
+        <tr><td>Pre-call sequence sent?</td><td>Automation confirmation</td></tr>
+        <tr><td>Showed?</td><td>Y/N — show rate per setter per source</td></tr>
         <tr><td>Closer assigned</td><td>Accountability on the close side</td></tr>
         <tr><td>Close outcome</td><td>Won / Lost / Rescheduled / Nurture / Downsell</td></tr>
-        <tr><td>Deal size</td><td>Revenue attribution by program and by source</td></tr>
-        <tr><td>Referral source</td><td>If referred, who referred — for referral program</td></tr>
+        <tr><td>Deal size</td><td>Revenue attribution by program and source</td></tr>
+        <tr><td>Briefing attendee?</td><td>Flags leads who came through the private briefing — track close rate difference</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- ── SECTION 2: WEBINAR ── -->
+<!-- ── SECTION 2: WEBINAR / PRIVATE BRIEFING ── -->
 <section class="section" id="webinar">
   <div class="section-header">
     <span class="section-num">02</span>
     <div>
-      <h2>Webinar Funnel — Full Flow</h2>
-      <p>90-minute live webinar → 3-email post-webinar sequence → segmented by country and graduation year → Roundtable Preview Call → closer.</p>
+      <h2>Private Briefing — Run-of-Show + Post-Event Flow</h2>
+      <p>90-minute session. 20 invited families. Jake runs the narrative and owns the close. Stanford AO validates. Post-event: 3-email sequence segmented by country and graduation year.</p>
     </div>
   </div>
 
   <div class="diagram-card">
-    <div class="diagram-label">Top-of-Funnel to Registration</div>
-    <div class="mermaid">
-flowchart LR
-    A["Ad Creative /\nOrganic Content\nTikTok · Meta · Instagram"] --> B["Registration Page\n'The Admission Game Has Changed:\nWhat Elite Families Are Doing\nDifferently in 2026'"]
-    B --> C{"Registers?"}
-    C -- No --> Z["Retargeted\nOrganic remarketing\nSwiss family story reel\nMeta pixel audience"]
-    Z --> B
-    C -- Yes --> D["Auto-captured in GHL\n✅ Country field logged\nSegments: domestic vs. international"]
-    D --> E["Email 1 — Immediate\nYou're in + what to expect\nStanford AO announcement"]
-    E --> F["Email 2 — 24hrs before\n'Try this for your student'\nThe 3 Questions preview exercise"]
-    F --> G["Email 3 — 1hr before\nLink inside · Start on time\nAO on full 90 minutes"]
-    G --> H[["🎥 LIVE WEBINAR\n90 Minutes"]]
-    </div>
-  </div>
-
-  <div class="diagram-card">
-    <div class="diagram-label">Webinar Run-of-Show — 90 Minutes</div>
+    <div class="diagram-label">Run-of-Show — 90 Minutes</div>
     <div class="mermaid">
 flowchart TD
-    W1["0:00–0:05\n🟡 Pre-Warm\nJake · Chat open · Poll: What grade is your student?"]
-    W2["0:05–0:08\nWelcome + Agenda\nJake · 30 seconds max · Start the story fast"]
-    W3["0:08–0:18\n📖 Swiss Family Story\nJake · No slides · Conversational\n44 IB · 4 languages · Rejected by Harvard Yale Princeton Stanford\n'What was missing?'"]
-    W4["0:18–0:25\n⚔️ Why Other Firms Fail\nJake · Slides\n3 failure modes: sounds good / ignores rarity / profile not person"]
-    W5["0:25–0:30\n🎓 Stanford AO Introduction\nJake introduces AO · Years on committee · Why they're here"]
-    W6["0:30–0:45\n🔑 Point 1: Find the Spike\nJake + AO · Tyson story\nThe 3 Questions taught in full\nLive exercise: try it for your student right now\nAO confirms from committee side"]
-    W7["0:45–0:56\n🏗️ Point 2: Build the Spike\nJake · Hook Engineering + Credential Stack\nResearch with MIT · UPenn · Brown · Michigan PhDs\nInternships: Oracle · Disney · Julius Baer"]
-    W8["0:56–1:05\n🏆 The Stanford Admit Moment\nJake + AO\nCase study: what was built · Roundtable said · The admit\nAO confirms what made it work"]
-    W9["1:05–1:13\n✅ Point 3: Validate — Roundtable Read\nJake + AO\nFormer AOs: Harvard · Yale · Princeton · Dartmouth · UPenn\n'Most families find out what the committee thinks when the letter arrives.\nWe find out while it's still being built.'"]
-    W10["1:13–1:20\n❓ Q&A\nJake + AO · Pre-seeded + live chat\nAO takes hard committee questions"]
-    W11["1:20–1:28\n💰 THE CLOSE — Jake only\nAO steps back\nRoundtable Preview Call\n20 min · Former AO reads your student's profile\n3 deliverables: spike opportunity · credential gaps · buildable timeline\nBooking link drops in chat · Show on screen"]
-    W12["1:28–1:30\nWrap\nBooking link live · Replay info · Next steps"]
+    W1["0:00–0:05\nPre-Warm\nJake · Chat open · Poll: What grade is your student?\n20 families — everyone is qualified and invited"]
+    W2["0:05–0:08\nWelcome + Agenda\nJake · 30 seconds max · Start the story immediately"]
+    W3["0:08–0:18\nSwiss Family Story\nJake · No slides · Conversational\n44 IB · 4 languages · Rejected by Harvard Yale Princeton Stanford\n'What was missing?'"]
+    W4["0:18–0:25\nWhy Other Firms Fail — 3 Failure Modes\nJake · Slides\nSounds good / ignores rarity / profile not person"]
+    W5["0:25–0:30\nStanford AO Introduction\nJake introduces the AO\nYears on committee · Why they're here · What they'll add"]
+    W6["0:30–0:45\nPoint 1: Find the Spike\nJake + AO · Tyson story\nThe 3 Questions taught in full\nLive exercise: try it for your student right now\nAO confirms from the committee side"]
+    W7["0:45–0:56\nPoint 2: Build the Spike\nJake · Hook Engineering + Credential Stack\nResearch with MIT · UPenn · Brown · Michigan PhDs\nInternships: Oracle · Disney · Julius Baer"]
+    W8["0:56–1:05\nThe Stanford Admit Moment\nJake + AO\nCase study: what was built · Roundtable said · The admit\nAO confirms from experience"]
+    W9["1:05–1:13\nPoint 3: Validate — The Roundtable Read\nJake + AO\nFormer AOs: Harvard · Yale · Princeton · Dartmouth · UPenn\n'Most families find out when the letter arrives.\nWe find out while it's still being built.'"]
+    W10["1:13–1:20\nQ&A\nJake + AO · Pre-seeded + live\nAO takes hard committee questions\n20 people = real conversation, not a crowd"]
+    W11["1:20–1:28\nThe Close — Jake Only\nAO steps back\nRoundtable Preview Call\n20 min · Former AO reads your student's profile\n3 deliverables: spike · credential gaps · buildable timeline\nBooking link live"]
+    W12["1:28–1:30\nWrap\nBooking link in chat · Replay info"]
 
     W1 --> W2 --> W3 --> W4 --> W5 --> W6 --> W7 --> W8 --> W9 --> W10 --> W11 --> W12
     </div>
   </div>
 
   <div class="diagram-card">
-    <div class="diagram-label">Post-Webinar Sequence — Segmented</div>
+    <div class="diagram-label">Post-Briefing Sequence — Segmented</div>
     <div class="mermaid">
 flowchart TD
-    END["Webinar ends"] --> ALL["Email 1 — Same day +1hr\nReplay link + Roundtable Preview CTA\nSent to ALL registrants"]
+    END["Briefing ends"] --> ALL["Email 1 — Same day +1hr\nReplay link + Roundtable Preview CTA\nSent to all 20 attendees"]
 
     ALL --> B1{"Books call?"}
     B1 -- Yes --> CLOSE["Into Sales Pipeline\nPre-call sequence fires\nCloser takes the call"]
-    B1 -- No --> SEG{"Country field"}
+    B1 -- No --> SEG{"Country"}
 
-    SEG --> INT["🌍 International Segment\nEmail 2 — 48hrs\n'For families outside the US —\nthis is what changes everything'\nSingapore · Switzerland · UAE · UK · South Korea"]
-    SEG --> DOM["🇺🇸 Domestic Segment\nEmail 2 — 48hrs\nStandard follow-up\nRoundtable Preview CTA"]
+    SEG --> INT["International\nEmail 2 — 48hrs\n'For families outside the US —\nthis is what changes everything'\nSingapore · Switzerland · UAE · UK · South Korea"]
+    SEG --> DOM["Domestic\nEmail 2 — 48hrs\nStandard follow-up\nRoundtable Preview CTA"]
 
     INT --> C1{"Books?"}
     DOM --> C1
 
     C1 -- Yes --> CLOSE
-    C1 -- No --> LC["Email 3 — 5 days after\nLast call — Roundtable Preview spots closing\nHard deadline + next availability date"]
+    C1 -- No --> LC["Email 3 — 5 days after\nLast call — Roundtable Preview spots closing\nHard deadline + next availability"]
 
     LC --> D1{"Books?"}
     D1 -- Yes --> CLOSE
     D1 -- No --> GRAD{"Graduation year"}
 
-    GRAD --> G1["2026 — 12th grade\n🔴 Fast-close sequence\nEmergency consultation framing"]
-    GRAD --> G2["2027–2028 — 10th/11th\n🟢 Full consultation\nStart now while time is on your side"]
-    GRAD --> G3["2029+ — 8th/9th or younger\n🟡 Long-term nurture\nDownsell: Hook Program $497–997"]
+    GRAD --> G1["12th grade\nFast-close / emergency framing"]
+    GRAD --> G2["10th–11th grade\nFull consultation\nStart now — time is the asset"]
+    GRAD --> G3["8th–9th grade\nLong-term nurture\nHook Program $497–997"]
 
     G1 --> CLOSE
-    G2 --> NURTURE["60-day nurture sequence\nCase studies · Broadcasts · Re-engage next cycle"]
-    G3 --> LOWTICKET["Hook Program\nPost-purchase upsell → consultation later"]
+    G2 --> NURTURE["60-day nurture\nCase studies · Broadcasts"]
+    G3 --> LOWTICKET["Hook Program\nPost-purchase upsell path"]
     </div>
   </div>
 
   <div class="table-card">
-    <h3>Webinar Segment Breakdown</h3>
+    <h3>Session Segments at a Glance</h3>
     <table>
-      <thead>
-        <tr><th>Time</th><th>Segment</th><th>Owner</th><th>Purpose</th></tr>
-      </thead>
+      <thead><tr><th>Time</th><th>Segment</th><th>Owner</th><th>Purpose</th></tr></thead>
       <tbody>
-        <tr><td>0:00–0:05</td><td>Pre-warm</td><td>Jake</td><td>Build energy, gather student grade data via poll</td></tr>
-        <tr><td>0:05–0:08</td><td>Welcome</td><td>Jake</td><td>No long intros — get to the story in under 3 min</td></tr>
-        <tr><td>0:08–0:18</td><td>Swiss Family Story</td><td>Jake</td><td>Urgency without anxiety. The gap: credentials without a spike.</td></tr>
-        <tr><td>0:18–0:25</td><td>3 Failure Modes</td><td>Jake</td><td>Indict the industry. Frame Ivy Brothers as the only real answer.</td></tr>
-        <tr><td>0:25–0:30</td><td>AO Intro</td><td>Jake</td><td>Institutional credibility anchor. Room shifts here.</td></tr>
-        <tr><td>0:30–0:45</td><td>Find the Spike (3 Questions)</td><td>Jake + AO</td><td>Core teach. Tyson. Live exercise. AO validates from inside the room.</td></tr>
-        <tr><td>0:45–0:56</td><td>Build the Spike</td><td>Jake</td><td>Hook Engineering + Credential Stack. The infrastructure only IB has.</td></tr>
-        <tr><td>0:56–1:05</td><td>Stanford Admit Moment</td><td>Jake + AO</td><td>End-to-end proof. The system working on a real student.</td></tr>
-        <tr><td>1:05–1:13</td><td>Roundtable Validate</td><td>Jake + AO</td><td>AO speaks to what a validated vs. unvalidated file reads like.</td></tr>
-        <tr><td>1:13–1:20</td><td>Q&A</td><td>Jake + AO</td><td>Trust and specificity. AO takes the hardest questions.</td></tr>
-        <tr><td>1:20–1:28</td><td>Close</td><td>Jake only</td><td>Roundtable Preview Call. Booking link live. AO off camera.</td></tr>
-        <tr><td>1:28–1:30</td><td>Wrap</td><td>Jake</td><td>Replay. Next availability. Calendar link in chat.</td></tr>
+        <tr><td>0:00–0:05</td><td>Pre-warm</td><td>Jake</td><td>Energy + grade data poll — 20 families, all invited</td></tr>
+        <tr><td>0:05–0:08</td><td>Welcome</td><td>Jake</td><td>30 seconds max — get to the story immediately</td></tr>
+        <tr><td>0:08–0:18</td><td>Swiss Family Story</td><td>Jake</td><td>Urgency without anxiety. The question: what was missing?</td></tr>
+        <tr><td>0:18–0:25</td><td>3 Failure Modes</td><td>Jake</td><td>Indict the industry. Frame IB as the only real answer.</td></tr>
+        <tr><td>0:25–0:30</td><td>AO Introduction</td><td>Jake</td><td>Institutional credibility anchor. Room shifts here.</td></tr>
+        <tr><td>0:30–0:45</td><td>Find the Spike (3 Questions)</td><td>Jake + AO</td><td>Core teach. Tyson. Live exercise. AO validates.</td></tr>
+        <tr><td>0:45–0:56</td><td>Build the Spike</td><td>Jake</td><td>Hook Engineering + Credential Stack. The infrastructure.</td></tr>
+        <tr><td>0:56–1:05</td><td>Stanford Admit Moment</td><td>Jake + AO</td><td>End-to-end proof. Real student. Real result.</td></tr>
+        <tr><td>1:05–1:13</td><td>Roundtable Validate</td><td>Jake + AO</td><td>AO speaks to what a validated file reads like.</td></tr>
+        <tr><td>1:13–1:20</td><td>Q&A</td><td>Jake + AO</td><td>20 people = real conversation. AO takes hard questions.</td></tr>
+        <tr><td>1:20–1:28</td><td>Close</td><td>Jake only</td><td>Roundtable Preview Call. AO off camera. Booking link live.</td></tr>
+        <tr><td>1:28–1:30</td><td>Wrap</td><td>Jake</td><td>Replay. Calendar link. Next steps.</td></tr>
       </tbody>
     </table>
   </div>
@@ -508,137 +662,49 @@ flowchart TD
     <span class="section-num">03</span>
     <div>
       <h2>KPIs & Tech Stack</h2>
-      <p>What we're measuring and what tools we need to run the system.</p>
+      <p>What we measure and what tools we need to run the full system — from application gate through CRM through close.</p>
     </div>
   </div>
 
   <div class="stats-row">
-    <div class="stat-card">
-      <div class="num">&lt;5 min</div>
-      <div class="label">Speed to lead target</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">&gt;40%</div>
-      <div class="label">Lead-to-call booked</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">&gt;75%</div>
-      <div class="label">Show rate target</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">&gt;30%</div>
-      <div class="label">Close rate target</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">98.4%</div>
-      <div class="label">IB first-choice rate (proof)</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">$300–500K</div>
-      <div class="label">90-day revenue target</div>
-    </div>
+    <div class="stat-card"><div class="num">&lt;5 min</div><div class="label">Speed to lead target</div></div>
+    <div class="stat-card"><div class="num">&gt;40%</div><div class="label">Lead-to-call booked</div></div>
+    <div class="stat-card"><div class="num">&gt;75%</div><div class="label">Show rate target</div></div>
+    <div class="stat-card"><div class="num">&gt;30%</div><div class="label">Close rate target</div></div>
+    <div class="stat-card"><div class="num">20</div><div class="label">Briefing seats per run</div></div>
+    <div class="stat-card"><div class="num">$300–500K</div><div class="label">90-day revenue target</div></div>
   </div>
 
   <div class="table-card">
-    <h3>KPI Dashboard — Weekly Metrics</h3>
+    <h3>Blocking Items — Before Go-Live</h3>
     <table>
-      <thead>
-        <tr><th>Metric</th><th>Target</th><th>Frequency</th></tr>
-      </thead>
+      <thead><tr><th>#</th><th>Item</th><th>Priority</th></tr></thead>
       <tbody>
-        <tr><td>Speed to lead (avg)</td><td>&lt;5 minutes</td><td>Daily</td></tr>
-        <tr><td>Lead-to-call booked rate</td><td>&gt;40%</td><td>Weekly</td></tr>
-        <tr><td>Show rate</td><td>&gt;75%</td><td>Weekly</td></tr>
-        <tr><td>Close rate</td><td>&gt;30%</td><td>Weekly</td></tr>
-        <tr><td>Calls booked this week</td><td>Track vs. prior week</td><td>Daily</td></tr>
-        <tr><td>Revenue closed (attributed)</td><td>New only, vs. baseline</td><td>Daily</td></tr>
-        <tr><td>Cost per lead (once ads live)</td><td>&lt;$500</td><td>Weekly</td></tr>
-        <tr><td>Webinar registration rate</td><td>Track per run</td><td>Per run</td></tr>
-        <tr><td>Webinar show rate</td><td>Track per run</td><td>Per run</td></tr>
-        <tr><td>Post-webinar call conversion</td><td>Track per run</td><td>Per run</td></tr>
+        <tr><td>1</td><td>Stanford AO confirmed — name + photo drives application conversion rate</td><td><span class="pill pill-red">Blocking</span></td></tr>
+        <tr><td>2</td><td>Application form built and live (Tally or GHL form → intake pipeline)</td><td><span class="pill pill-red">Blocking</span></td></tr>
+        <tr><td>3</td><td>GoHighLevel provisioned — CRM is the foundation before setter starts</td><td><span class="pill pill-red">Blocking</span></td></tr>
+        <tr><td>4</td><td>Stanford admit case study — disclosure approved? Determines proof moment format</td><td><span class="pill pill-yellow">High</span></td></tr>
+        <tr><td>5</td><td>Jake briefed + close script rehearsed — run one mock close</td><td><span class="pill pill-yellow">High</span></td></tr>
+        <tr><td>6</td><td>Target session date — recommended August–September, back-to-school traffic peak</td><td><span class="pill pill-yellow">High</span></td></tr>
+        <tr><td>7</td><td>Application page domain — theivybrothers.com/apply or subdomain</td><td><span class="pill pill-blue">Medium</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="tech-row">
-    <div class="tech-card">
-      <div class="fn">CRM + Pipeline</div>
-      <div class="tool">GoHighLevel</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Automation (SMS + Email)</div>
-      <div class="tool">GHL Native</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Calendar Booking</div>
-      <div class="tool">Cal.com (embedded)</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Webinar Platform</div>
-      <div class="tool">StreamYard + EverWebinar</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Knowledge Base</div>
-      <div class="tool">Notion</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Lower-Ticket Course</div>
-      <div class="tool">Skool or Kajabi</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Paid Ads</div>
-      <div class="tool">Meta Ads Manager</div>
-    </div>
-    <div class="tech-card">
-      <div class="fn">Tracking</div>
-      <div class="tool">Meta Pixel + UTMs</div>
-    </div>
-  </div>
-
-  <div class="table-card">
-    <h3>Open Questions — Before Go-Live</h3>
-    <table>
-      <thead>
-        <tr><th>#</th><th>Question</th><th>Priority</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Stanford AO confirmed? Name + photo needed before registration page goes live — this is the #1 registration driver</td>
-          <td><span class="pill pill-red">Blocking</span></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Stanford admit case study — which student, disclosure approved? Determines Option A/B/C for the proof moment</td>
-          <td><span class="pill pill-red">Blocking</span></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Jake briefed + close script rehearsed? Run one mock close before live date</td>
-          <td><span class="pill pill-yellow">High</span></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Target live date set? Recommended: August–September for back-to-school traffic peak</td>
-          <td><span class="pill pill-yellow">High</span></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Registration domain confirmed? theivybrothers.com/webinar or subdomain</td>
-          <td><span class="pill pill-blue">Medium</span></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>GoHighLevel account provisioned? CRM is the foundation — needs to be live before setter starts</td>
-          <td><span class="pill pill-red">Blocking</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="tech-card"><div class="fn">CRM + Pipeline</div><div class="tool">GoHighLevel</div></div>
+    <div class="tech-card"><div class="fn">Application Form</div><div class="tool">GHL Form or Tally</div></div>
+    <div class="tech-card"><div class="fn">Automation (SMS + Email)</div><div class="tool">GHL Native</div></div>
+    <div class="tech-card"><div class="fn">Calendar Booking</div><div class="tool">Cal.com (embedded)</div></div>
+    <div class="tech-card"><div class="fn">Briefing Platform</div><div class="tool">StreamYard + EverWebinar</div></div>
+    <div class="tech-card"><div class="fn">Knowledge Base</div><div class="tool">Notion</div></div>
+    <div class="tech-card"><div class="fn">Lower-Ticket Course</div><div class="tool">Skool or Kajabi</div></div>
+    <div class="tech-card"><div class="fn">Paid Ads</div><div class="tool">Meta Ads Manager</div></div>
   </div>
 </section>
 
 <footer>
-  Ivy Brothers · Internal Strategy Document · Generated 2026-06-03 · Confidential
+  Ivy Brothers · Internal Strategy Document · Updated 2026-06-03 · Confidential
 </footer>
 
 <script>
@@ -660,13 +726,9 @@ flowchart TD
       edgeLabelBackground: '#1e1e35',
       fontSize: '13px',
     },
-    flowchart: {
-      curve: 'basis',
-      padding: 20,
-    }
+    flowchart: { curve: 'basis', padding: 20 }
   });
 
-  // Smooth scroll for nav
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
